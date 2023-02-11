@@ -1,0 +1,28 @@
+﻿<html>
+<head>
+    <title>Products</title>
+</head>
+<body>
+    <h1>DeltaWare Products</h1>
+    <button id="show-products">Show Products </button>
+    <table id="products-table" style="display:none;">
+        <tr>
+            <th>Product Id</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+<script>
+    document.getElementById("show-products").addEventListener("click", function() {
+      document.getElementById("products-table").style.display = "block";
+    });
+</script>
+</html>
